@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { FinanceProvider } from './contexts/FinanceContext';
+import { ScheduleProvider } from './contexts/ScheduleContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import AuthPage from './pages/AuthPage';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import TransactionsPage from './pages/Transactions';
+import SchedulePage from './pages/SchedulePage';
 import AddTransactionPage from './pages/AddTransaction';
 import UserManagementPage from './pages/UserManagement';
 
@@ -18,10 +20,12 @@ function ProtectedRoutes() {
 
   return (
     <FinanceProvider>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="transactions" element={<TransactionsPage />} />
+      <ScheduleProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="transactions" element={<TransactionsPage />} />
+            <Route path="schedule" element={<SchedulePage />} />
           {isEditor && (
             <>
               <Route path="add" element={<AddTransactionPage />} />
@@ -31,6 +35,7 @@ function ProtectedRoutes() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
+      </ScheduleProvider>
     </FinanceProvider>
   );
 }

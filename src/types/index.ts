@@ -51,3 +51,29 @@ export interface CategoryBreakdown {
 
 // ---- Theme ----
 export type Theme = 'dark' | 'light';
+
+// ---- Scheduling & Polling ----
+export interface Tournament {
+  id: string;
+  name: string;
+  createdAt: string;
+}
+
+export type AvailabilityResponse = 'available' | 'unavailable' | 'tentative';
+
+export interface Game {
+  id: string;
+  tournamentId?: string; // Optional for practice or ad-hoc games
+  opponent: string;      
+  location: string;      
+  startDateTime: string; // ISO date string
+  type: 'game' | 'practice';
+}
+
+// Map of userId -> Response
+export type GamePollResponses = Record<string, AvailabilityResponse>;
+
+export interface GamePoll {
+  gameId: string;
+  responses: GamePollResponses;
+}

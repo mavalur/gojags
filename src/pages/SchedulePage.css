@@ -1,0 +1,223 @@
+.schedule-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.schedule-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.tournaments-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tournaments-summary h3 {
+  font-size: var(--font-size-md);
+  color: var(--text-muted);
+}
+
+.tournaments-cards {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.tournament-card {
+  background: var(--bg-card);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--border-color);
+}
+
+.t-card-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.t-card-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.t-card-delete:hover {
+  color: var(--expense-color);
+}
+
+.games-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.game-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-header {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color); /* slightly different background for header */
+}
+
+.game-tournament-badge {
+  background: var(--bg-input);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.game-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+}
+
+.game-delete:hover {
+  color: var(--expense-color);
+  text-decoration: underline;
+}
+
+.game-body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.game-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.game-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.game-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.game-footer {
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  background: var(--bg-card);
+}
+
+.game-poll-actions {
+  display: flex;
+  gap: var(--space-sm);
+  background: var(--bg-input);
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.poll-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.poll-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.poll-btn.active.available {
+  background: var(--income-color);
+  color: #fff;
+}
+
+.poll-btn.active.tentative {
+  background: #facc15;
+  color: #000;
+}
+
+.poll-btn.active.unavailable {
+  background: var(--expense-color);
+  color: #fff;
+}
+
+.game-poll-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.view-responses-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--text-color);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.view-responses-btn:hover {
+  background: var(--border-color);
+}
+
+.game-poll-badges {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.game-poll-badges .text-success { color: var(--income-color); }
+.game-poll-badges .text-warning { color: #facc15; }
+.game-poll-badges .text-danger { color: var(--expense-color); }

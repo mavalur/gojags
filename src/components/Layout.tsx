@@ -12,12 +12,14 @@ import {
   Users,
   Sun,
   Moon,
+  CalendarDays,
 } from 'lucide-react';
 import './Layout.css';
 
 const NAV_ITEMS = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/transactions', icon: ArrowUpDown, label: 'Transactions' },
+  { to: '/schedule', icon: CalendarDays, label: 'Schedule' },
 ];
 
 export default function Layout() {
@@ -31,6 +33,7 @@ export default function Layout() {
   const pageInfo: Record<string, { title: string; subtitle: string }> = {
     '/': { title: 'Dashboard', subtitle: 'Overview of your team finances' },
     '/transactions': { title: 'Transactions', subtitle: 'View all income and expense records' },
+    '/schedule': { title: 'Team Schedule', subtitle: 'Manage tournaments, matches, and availability' },
     '/add': { title: 'Add Transaction', subtitle: 'Record a new income or expense' },
     '/team': { title: 'Team Members', subtitle: 'Manage your team and their roles' },
   };
